@@ -26,12 +26,29 @@ export class ProfessionalService {
   }
 
   async findAll() {
-    return await this.prismaSevice.professional.findMany();
+    return await this.prismaSevice.professional.findMany({
+      include: {
+        typeProfessional: {
+          select: {
+            type: true,
+            isActived: true,
+          },
+        },
+      },
+    });
   }
 
   findOne(id: number) {
     const professional = this.prismaSevice.professional.findUnique({
       where: { id },
+      include: {
+        typeProfessional: {
+          select: {
+            type: true,
+            isActived: true,
+          },
+        },
+      },
     });
 
     if (!professional) {

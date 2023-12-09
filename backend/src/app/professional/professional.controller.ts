@@ -15,7 +15,9 @@ import { CreateProfessionalDto } from './dto/create-professional.dto';
 import { UpdateProfessionalDto } from './dto/update-professional.dto';
 import { ConflictError } from '../../common/exceptions/conflict.error';
 import { NotFoundError } from '../../common/exceptions/not-found.error';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Professionals')
 @Controller('professionals')
 export class ProfessionalController {
   constructor(private readonly professionalService: ProfessionalService) {}

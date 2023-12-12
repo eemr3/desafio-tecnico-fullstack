@@ -26,7 +26,7 @@ export class TypeProfessionalService {
 
   async findAll() {
     return await this.prismaService.typeProfessional.findMany({
-      where: { isActived: true },
+      orderBy: { id: 'asc' },
     });
   }
 

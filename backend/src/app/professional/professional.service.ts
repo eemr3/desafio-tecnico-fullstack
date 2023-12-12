@@ -14,6 +14,15 @@ export class ProfessionalService {
       { where: { email: createProfessional.email } },
     );
 
+    const typeProfessional =
+      await this.prismaSevice.typeProfessional.findUnique({
+        where: { id: createProfessional.typeProfessionalId },
+      });
+
+    if (!typeProfessional || createProfessional.typeProfessionalId === null) {
+      throw new NotFoundError('Type Professional not found');
+    }
+
     if (professionalExistis) {
       throw new ConflictError('Professional already exists');
     }
@@ -27,6 +36,7 @@ export class ProfessionalService {
 
   async findAll() {
     return await this.prismaSevice.professional.findMany({
+      orderBy: { id: 'asc' },
       include: {
         typeProfessional: {
           select: {

@@ -50,6 +50,9 @@ export class ProfessionalController {
       if (error instanceof ConflictError) {
         throw new ConflictException(error.message);
       }
+      if (error instanceof NotFoundError) {
+        throw new NotFoundException(error.message);
+      }
       console.error(error);
       throw new InternalServerErrorException();
     }

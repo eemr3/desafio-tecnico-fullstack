@@ -30,7 +30,7 @@ model Professional {
   createdAt          DateTime         @default(now()) @map("created_at")
   updatedAt          DateTime         @updatedAt @map("updated_at")
   typeProfessionalId Int              @map("type_professional_id")
-  typeProfessional   TypeProfessional @relation(fields: [typeProfessionalId], references: [id], onDelete: Cascade)
+  typeProfessional   TypeProfessional @relation(fields: [typeProfessionalId], references: [id], onUpdate: Cascade)
 
   @@map("professional")
 }

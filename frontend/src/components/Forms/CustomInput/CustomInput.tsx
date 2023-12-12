@@ -1,0 +1,15 @@
+import { InputHTMLAttributes } from 'react';
+
+interface CustomImputProps extends InputHTMLAttributes<HTMLInputElement> {
+  className?: string;
+}
+
+export function CustomInput({ className, ...rest }: CustomImputProps) {
+  return (
+    <input
+      {...rest}
+      className={`shadow appearance-none border rounded w-full py-2 px-3 
+        text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${className}`}
+    />
+  );
+}

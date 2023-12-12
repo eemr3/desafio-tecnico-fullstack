@@ -1,0 +1,13 @@
+{
+  "name": "desafio-t-cnico-fullstack",
+  "version": "1.0.0",
+  "description": "Desenvolvido uma aplicação fullstack para um desafio técnico, essa aplicação é uma pequeno CRUD (Create, Read, Update, Delete) onde se pode cadastrar profissional e tipo de profissional. Ex:",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "(cd backend && npm install); (cd frontend && npm install)",
+    "install:apps": "(cd backend && npm install); (cd frontend && npm install)"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

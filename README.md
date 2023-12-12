@@ -16,17 +16,35 @@ Desenvolvido uma aplicação fullstack para um desafio técnico, essa aplicaçã
   - Você pode usar um serviço na nuvem; Ex: [ElephantSQL](https://www.elephantsql.com/)
   - Você pode usar o Docker e subir um container com o PostgreSQL. Site do [Docker e docker-compose](https://docs.docker.com/get-docker/)
 
-### Instalação
+### Instalação do projeto (banco de dados e dependências)
 
 - Clone o repositório
 
 ```bash
- https://github.com/eemr3/desafio-t-cnico-fullstack/tree/main
+git clone git@github.com:eemr3/desafio-t-cnico-fullstack.git
+```
+
+- Entre no diretório `desafio-t-cnico-fullstack`
+
+```bash
+cd desafio-t-cnico-fullstack
+```
+
+- Instale as dependências
+
+```bash
+# dentro da pasta desafio-t-cnico-fullstack
+npm install
 ```
 
 #### Preparando o banco de dados
 
 - Entre na pasta `backend`
+
+```bash
+cd backend
+```
+
 - Renomei o arquivo `.env.example` que se encontra dentro da pasta `backend` para
   ´`.env``
 
@@ -57,12 +75,36 @@ docker-compose up ou docker compose up   # depoendendo da versão do docker-comp
   npx prisma db seed
   ```
 
-### Intalação das dempendências do Frontend e Backend
+### Rodando a aplicação
+
+- Dentro da para `backend`
+
+```bash
+npm run start:dev
+```
 
 - Dentro da pasta `frontend`
 
 ```bash
-npm install
+npm run dev
 ```
 
-- Dentro da pasta
+- O Frontend (web) roda na URL:
+
+```bash
+http://localhost:5173
+```
+
+Observação: Para rodar o frontend (web) o server (API) precisa esta rodando
+
+### Documentação da API Swagger
+
+- No browser (navegador) use a URL apos a API estiver rodando:
+
+```bash
+http://localhost:3001/api/v1/doc
+```
+
+## Autor
+
+- [Emerson Moreira - @eemr3](https://www.github.com/eemr3)
